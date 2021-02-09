@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
   TouchableOpacity,
   Image,
 } from 'react-native';
-import Icone from './componentes/Icone';
-import Header from './componentes/Header';
-import Footer from './componentes/Footer';
-import Indicador from './componentes/Indicador';
-import Indicador2 from './componentes/Indicador2';
+import Icone from './src/componentes/Icone';
+import Header from './src/componentes/Header';
+import Footer from './src/componentes/Footer';
+import Indicador from './src/componentes/Indicador';
+import Indicador2 from './src/componentes/Indicador2';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class App extends Component {
@@ -19,7 +18,14 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { escolhaUsuario: '', escolhaComputador: '', resultado: 'Resultado', counter: 0, counter2: 0};
+    this.state = { 
+      escolhaUsuario: '', 
+      escolhaComputador: '', 
+      resultado: 'Resultado', 
+      counter: 0, 
+      counter2: 0
+    };
+
     this.atualiza = this.atualiza.bind(this);
   }
 
@@ -121,10 +127,12 @@ export default class App extends Component {
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent:'space-between'}}>  
 
-        <Header/>
+        <Header />
+
         <TouchableOpacity onPress={() => { this.atualiza(); }} style={{position: "absolute", paddingLeft: 300, paddingTop:38}}>
           <Icon name="refresh" size={19} color="white" />
         </TouchableOpacity>
+
         <View style={{width: '85%',height: 120, alignItems: 'center',
         justifyContent: 'center', backgroundColor: '#00BFFF',
         borderWidth: 1, borderColor: 'black', paddingTop: 5}}>
@@ -158,6 +166,7 @@ export default class App extends Component {
             </View>
           </View>
         </View>
+        
         <View style={styles.palco}>
           <Text style={{color: 'red', fontSize: 16}}>{this.state.resultado}</Text>
         </View>
@@ -186,7 +195,7 @@ export default class App extends Component {
           <View style={styles.btnEscolha}>
             <TouchableOpacity onPress={() => { this.jokenpo('pedra'); }} >
               <View>
-                <Image source={ require('./pedra.png')} style={{width:70, height:70}}></Image>
+                <Image source={ require('./src/images/pedra.png')} style={{width:70, height:70}}></Image>
               </View>
             </TouchableOpacity>
           </View>
@@ -194,7 +203,7 @@ export default class App extends Component {
           <View style={styles.btnEscolha}>
             <TouchableOpacity onPress={() => { this.jokenpo('papel'); }} >
               <View>
-                <Image source={ require('./papel.png')} style={{width:70, height:70}}></Image>
+                <Image source={ require('./src/images/papel.png')} style={{width:70, height:70}}></Image>
               </View>
             </TouchableOpacity>
           </View>
@@ -202,7 +211,7 @@ export default class App extends Component {
           <View style={styles.btnEscolha}>
             <TouchableOpacity onPress={() => { this.jokenpo('tesoura'); }} >
               <View>
-                <Image source={ require('./tesoura.png')} style={{width:70, height:70}}></Image>
+                <Image source={ require('./src/images/tesoura.png')} style={{width:70, height:70}}></Image>
               </View>
             </TouchableOpacity>
          </View>

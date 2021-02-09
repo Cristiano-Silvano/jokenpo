@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Image, Text} from 'react-native';
 
-const pedra = require('../pedra.png');
-const papel = require('../papel.png');
-const tesoura = require('../tesoura.png');
+const pedra = require('../images/pedra.png');
+const papel = require('../images/papel.png');
+const tesoura = require('../images/tesoura.png');
 
 
 
